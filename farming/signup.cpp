@@ -3,7 +3,10 @@
 #include <QRegularExpression>
 #include "QMessageBox"
 #include <string>
-
+#include <QSqlDatabase>
+#include "QSqlDriver"
+#include "QSqlQuery"
+#include "QSqlQueryModel"
 #include <QIntValidator>
 
 signup::signup(QWidget *parent)
@@ -11,6 +14,10 @@ signup::signup(QWidget *parent)
     , ui(new Ui::signup)
 {
     ui->setupUi(this);
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("e:/programming/FinalProject_QT/database/players.db");
+    database.open();
     ui->Password_lineEdit->setEchoMode(QLineEdit::Password);
     ui->Phone_lineEdit->setValidator(new QIntValidator);
 }
