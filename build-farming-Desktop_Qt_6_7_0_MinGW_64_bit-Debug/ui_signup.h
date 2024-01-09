@@ -124,9 +124,14 @@ public:
     {
         signup->setWindowTitle(QCoreApplication::translate("signup", "signup", nullptr));
         groupBox->setTitle(QCoreApplication::translate("signup", "Register", nullptr));
+        UserName_lineEdit->setPlaceholderText(QCoreApplication::translate("signup", "Username", nullptr));
+        Password_lineEdit->setPlaceholderText(QCoreApplication::translate("signup", "Password", nullptr));
+        Phone_lineEdit->setPlaceholderText(QCoreApplication::translate("signup", "Phone Number", nullptr));
+        Email_lineEdit->setPlaceholderText(QCoreApplication::translate("signup", "Email", nullptr));
         captcha_groupBox->setTitle(QCoreApplication::translate("signup", "captcha", nullptr));
         changCaptcha_pushButton->setText(QCoreApplication::translate("signup", "chang", nullptr));
         captcha_label->setText(QString());
+        captcha_lineEdit->setPlaceholderText(QCoreApplication::translate("signup", "Enter captcha", nullptr));
         AddPlayer_pushButton->setText(QCoreApplication::translate("signup", "Add", nullptr));
         groupBox_2->setTitle(QString());
         pushButton->setText(QCoreApplication::translate("signup", "Lets Play...", nullptr));

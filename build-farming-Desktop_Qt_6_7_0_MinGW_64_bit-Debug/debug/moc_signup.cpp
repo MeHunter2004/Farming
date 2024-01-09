@@ -46,7 +46,8 @@ constexpr auto qt_meta_stringdata_CLASSsignupENDCLASS = QtMocHelpers::stringData
     "generateCaptcha",
     "n",
     "on_changCaptcha_pushButton_clicked",
-    "on_AddPlayer_pushButton_clicked"
+    "on_AddPlayer_pushButton_clicked",
+    "on_pushButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -59,7 +60,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSsignupENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       6,   14, // methods
+       7,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -67,18 +68,20 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSsignupENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    1,   50,    2, 0x0a,    1 /* Public */,
-       4,    1,   53,    2, 0x0a,    3 /* Public */,
-       6,    2,   56,    2, 0x0a,    5 /* Public */,
-      10,    1,   61,    2, 0x0a,    8 /* Public */,
-      12,    0,   64,    2, 0x08,   10 /* Private */,
-      13,    0,   65,    2, 0x08,   11 /* Private */,
+       1,    1,   56,    2, 0x0a,    1 /* Public */,
+       4,    1,   59,    2, 0x0a,    3 /* Public */,
+       6,    2,   62,    2, 0x0a,    5 /* Public */,
+      10,    1,   67,    2, 0x0a,    8 /* Public */,
+      12,    0,   70,    2, 0x08,   10 /* Private */,
+      13,    0,   71,    2, 0x08,   11 /* Private */,
+      14,    0,   72,    2, 0x08,   12 /* Private */,
 
  // slots: parameters
     QMetaType::Bool, QMetaType::QString,    3,
     QMetaType::Bool, QMetaType::QString,    5,
     QMetaType::Bool, QMetaType::QString, 0x80000000 | 8,    7,    9,
     0x80000000 | 8, QMetaType::Int,   11,
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
 
@@ -110,6 +113,8 @@ Q_CONSTINIT const QMetaObject signup::staticMetaObject = { {
         // method 'on_changCaptcha_pushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_AddPlayer_pushButton_clicked'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'on_pushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -131,6 +136,7 @@ void signup::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void
             if (_a[0]) *reinterpret_cast< std::string*>(_a[0]) = std::move(_r); }  break;
         case 4: _t->on_changCaptcha_pushButton_clicked(); break;
         case 5: _t->on_AddPlayer_pushButton_clicked(); break;
+        case 6: _t->on_pushButton_clicked(); break;
         default: ;
         }
     }
@@ -155,13 +161,13 @@ int signup::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 6)
+        if (_id < 7)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 6;
+        _id -= 7;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 6)
+        if (_id < 7)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 6;
+        _id -= 7;
     }
     return _id;
 }

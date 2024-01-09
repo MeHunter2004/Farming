@@ -386,7 +386,8 @@ Makefile: ../farming/farming.pro ../../QT/instalation/6.7.0/mingw_64/mkspecs/win
 		../../QT/instalation/6.7.0/mingw_64/lib/Qt6Sql.prl \
 		../../QT/instalation/6.7.0/mingw_64/lib/Qt6Core.prl \
 		../../QT/instalation/6.7.0/mingw_64/lib/Qt6EntryPoint.prl \
-		../../QT/instalation/6.7.0/mingw_64/mkspecs/features/build_pass.prf
+		../../QT/instalation/6.7.0/mingw_64/mkspecs/features/build_pass.prf \
+		../farming/images.qrc
 	$(QMAKE) -o Makefile ..\farming\farming.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 ../../QT/instalation/6.7.0/mingw_64/mkspecs/features/spec_pre.prf:
 ../../QT/instalation/6.7.0/mingw_64/mkspecs/features/device_config.prf:
@@ -705,6 +706,7 @@ Makefile: ../farming/farming.pro ../../QT/instalation/6.7.0/mingw_64/mkspecs/win
 ../../QT/instalation/6.7.0/mingw_64/lib/Qt6Core.prl:
 ../../QT/instalation/6.7.0/mingw_64/lib/Qt6EntryPoint.prl:
 ../../QT/instalation/6.7.0/mingw_64/mkspecs/features/build_pass.prf:
+../farming/images.qrc:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\farming\farming.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 

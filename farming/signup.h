@@ -29,6 +29,8 @@ private slots:
 
     void on_AddPlayer_pushButton_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::signup *ui;
 };
