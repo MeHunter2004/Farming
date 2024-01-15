@@ -101,21 +101,22 @@ void signup::on_AddPlayer_pushButton_clicked()
             if(isEmailValid(ui->Email_lineEdit->text())){
                 QString userInput = ui->captcha_lineEdit->text();
                 if (customCompare(userInput, captcha)) {
+                     QSqlQuery query;
                     QString s1, s2, s3, s4;
-                    int salary = 10;
+                    //int salary = 10;
                     s1 = ui->UserName_lineEdit->text();
                     s2 = ui->Password_lineEdit->text();
                     s4 = ui->Email_lineEdit->text();
                     s3 = ui->Phone_lineEdit->text();
-                    QSqlQuery query;
-                    // query.prepare("INSERT INTO Player(Username, Password, PhoneNumber, Email, Salary) VALUES(:s1, :s2, :s3, :s4, :salary)");
+
+                    query.exec("INSERT INTO Player(Username, Password, PhoneNumber, Email) VALUES('"+s1+"', '"+s2+"', '"+s3+"', '"+s4+"')");
                     // query.bindValue(":s1", s1);
                     // query.bindValue(":s2", s2);
                     // query.bindValue(":s3", s3);
                     // query.bindValue(":s4", s4);
                     // query.bindValue(":salary", salary);
                     // query.exec();
-                    query.exec("INSERT INTO Player(Username,Password,PhoneNumber,Email,Salary");
+                    //query.exec("INSERT INTO Player(Username,Password,PhoneNumber,Email,Salary");
 
                 } else {
                     QMessageBox::warning(this,"Captcha","Pleas enter correct captcha.");

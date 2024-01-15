@@ -54,9 +54,11 @@ public:
         wheat_pushButton = new QPushButton(seeds_groupBox);
         wheat_pushButton->setObjectName("wheat_pushButton");
         wheat_pushButton->setGeometry(QRect(0, 10, 100, 80));
+        wheat_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images12/wheat.jpg);"));
         corn_pushButton = new QPushButton(seeds_groupBox);
         corn_pushButton->setObjectName("corn_pushButton");
         corn_pushButton->setGeometry(QRect(100, 10, 100, 80));
+        corn_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images12/corn.png);"));
 
         retranslateUi(Selection);
 
