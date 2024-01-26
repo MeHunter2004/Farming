@@ -12,142 +12,109 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
-#include <QtWidgets/QGridLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QPushButton>
-#include <QtWidgets/QWidget>
 
 QT_BEGIN_NAMESPACE
 
 class Ui_GameFrame
 {
 public:
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
-    QPushButton *H3_1_pushButton;
-    QPushButton *H4_3_pushButton;
-    QPushButton *H4_4_pushButton;
-    QPushButton *H4_2_pushButton;
-    QPushButton *H2_1_pushButton;
-    QPushButton *H4_1_pushButton;
+    QLabel *Name_label;
+    QLabel *coins_label;
     QPushButton *H1_1_pushButton;
     QPushButton *H1_2_pushButton;
-    QPushButton *H2_2_pushButton;
-    QPushButton *H3_2_pushButton;
-    QPushButton *H3_3_pushButton;
-    QPushButton *H2_3_pushButton;
     QPushButton *H1_3_pushButton;
     QPushButton *H1_4_pushButton;
+    QPushButton *H2_1_pushButton;
+    QPushButton *H2_2_pushButton;
+    QPushButton *H2_3_pushButton;
     QPushButton *H2_4_pushButton;
+    QPushButton *H3_1_pushButton;
+    QPushButton *H3_2_pushButton;
+    QPushButton *H3_3_pushButton;
     QPushButton *H3_4_pushButton;
+    QPushButton *H4_1_pushButton;
+    QPushButton *H4_2_pushButton;
+    QPushButton *H4_3_pushButton;
+    QPushButton *H4_4_pushButton;
 
     void setupUi(QFrame *GameFrame)
     {
         if (GameFrame->objectName().isEmpty())
             GameFrame->setObjectName("GameFrame");
-        GameFrame->resize(501, 344);
-        gridLayoutWidget = new QWidget(GameFrame);
-        gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(60, 40, 381, 301));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        H3_1_pushButton = new QPushButton(gridLayoutWidget);
-        H3_1_pushButton->setObjectName("H3_1_pushButton");
-        H3_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H3_1_pushButton, 2, 0, 1, 1);
-
-        H4_3_pushButton = new QPushButton(gridLayoutWidget);
-        H4_3_pushButton->setObjectName("H4_3_pushButton");
-        H4_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H4_3_pushButton, 3, 2, 1, 1);
-
-        H4_4_pushButton = new QPushButton(gridLayoutWidget);
-        H4_4_pushButton->setObjectName("H4_4_pushButton");
-        H4_4_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H4_4_pushButton, 3, 3, 1, 1);
-
-        H4_2_pushButton = new QPushButton(gridLayoutWidget);
-        H4_2_pushButton->setObjectName("H4_2_pushButton");
-        H4_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H4_2_pushButton, 3, 1, 1, 1);
-
-        H2_1_pushButton = new QPushButton(gridLayoutWidget);
-        H2_1_pushButton->setObjectName("H2_1_pushButton");
-        H2_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H2_1_pushButton, 1, 0, 1, 1);
-
-        H4_1_pushButton = new QPushButton(gridLayoutWidget);
-        H4_1_pushButton->setObjectName("H4_1_pushButton");
-        H4_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H4_1_pushButton, 3, 0, 1, 1);
-
-        H1_1_pushButton = new QPushButton(gridLayoutWidget);
+        GameFrame->resize(600, 500);
+        Name_label = new QLabel(GameFrame);
+        Name_label->setObjectName("Name_label");
+        Name_label->setGeometry(QRect(130, 10, 37, 12));
+        coins_label = new QLabel(GameFrame);
+        coins_label->setObjectName("coins_label");
+        coins_label->setGeometry(QRect(130, 40, 37, 12));
+        H1_1_pushButton = new QPushButton(GameFrame);
         H1_1_pushButton->setObjectName("H1_1_pushButton");
-        H1_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H1_1_pushButton, 0, 0, 1, 1);
-
-        H1_2_pushButton = new QPushButton(gridLayoutWidget);
+        H1_1_pushButton->setGeometry(QRect(50, 100, 100, 100));
+        H1_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H1_2_pushButton = new QPushButton(GameFrame);
         H1_2_pushButton->setObjectName("H1_2_pushButton");
-        H1_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H1_2_pushButton, 0, 1, 1, 1);
-
-        H2_2_pushButton = new QPushButton(gridLayoutWidget);
-        H2_2_pushButton->setObjectName("H2_2_pushButton");
-        H2_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H2_2_pushButton, 1, 1, 1, 1);
-
-        H3_2_pushButton = new QPushButton(gridLayoutWidget);
-        H3_2_pushButton->setObjectName("H3_2_pushButton");
-        H3_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H3_2_pushButton, 2, 1, 1, 1);
-
-        H3_3_pushButton = new QPushButton(gridLayoutWidget);
-        H3_3_pushButton->setObjectName("H3_3_pushButton");
-        H3_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H3_3_pushButton, 2, 2, 1, 1);
-
-        H2_3_pushButton = new QPushButton(gridLayoutWidget);
-        H2_3_pushButton->setObjectName("H2_3_pushButton");
-        H2_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H2_3_pushButton, 1, 2, 1, 1);
-
-        H1_3_pushButton = new QPushButton(gridLayoutWidget);
+        H1_2_pushButton->setGeometry(QRect(150, 100, 100, 100));
+        H1_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H1_3_pushButton = new QPushButton(GameFrame);
         H1_3_pushButton->setObjectName("H1_3_pushButton");
-        H1_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H1_3_pushButton, 0, 2, 1, 1);
-
-        H1_4_pushButton = new QPushButton(gridLayoutWidget);
+        H1_3_pushButton->setGeometry(QRect(250, 100, 100, 100));
+        H1_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H1_4_pushButton = new QPushButton(GameFrame);
         H1_4_pushButton->setObjectName("H1_4_pushButton");
-        H1_4_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H1_4_pushButton, 0, 3, 1, 1);
-
-        H2_4_pushButton = new QPushButton(gridLayoutWidget);
+        H1_4_pushButton->setGeometry(QRect(350, 100, 100, 100));
+        H1_4_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H2_1_pushButton = new QPushButton(GameFrame);
+        H2_1_pushButton->setObjectName("H2_1_pushButton");
+        H2_1_pushButton->setGeometry(QRect(50, 200, 100, 100));
+        H2_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H2_2_pushButton = new QPushButton(GameFrame);
+        H2_2_pushButton->setObjectName("H2_2_pushButton");
+        H2_2_pushButton->setGeometry(QRect(150, 200, 100, 100));
+        H2_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H2_3_pushButton = new QPushButton(GameFrame);
+        H2_3_pushButton->setObjectName("H2_3_pushButton");
+        H2_3_pushButton->setGeometry(QRect(250, 200, 100, 100));
+        H2_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H2_4_pushButton = new QPushButton(GameFrame);
         H2_4_pushButton->setObjectName("H2_4_pushButton");
+        H2_4_pushButton->setGeometry(QRect(350, 200, 100, 100));
         H2_4_pushButton->setStyleSheet(QString::fromUtf8("\n"
-"background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H2_4_pushButton, 1, 3, 1, 1);
-
-        H3_4_pushButton = new QPushButton(gridLayoutWidget);
+"background-color: rgb(81, 41, 0);"));
+        H3_1_pushButton = new QPushButton(GameFrame);
+        H3_1_pushButton->setObjectName("H3_1_pushButton");
+        H3_1_pushButton->setGeometry(QRect(50, 300, 100, 100));
+        H3_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H3_2_pushButton = new QPushButton(GameFrame);
+        H3_2_pushButton->setObjectName("H3_2_pushButton");
+        H3_2_pushButton->setGeometry(QRect(150, 300, 100, 100));
+        H3_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H3_3_pushButton = new QPushButton(GameFrame);
+        H3_3_pushButton->setObjectName("H3_3_pushButton");
+        H3_3_pushButton->setGeometry(QRect(250, 300, 100, 100));
+        H3_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H3_4_pushButton = new QPushButton(GameFrame);
         H3_4_pushButton->setObjectName("H3_4_pushButton");
-        H3_4_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(0, 85, 0);"));
-
-        gridLayout->addWidget(H3_4_pushButton, 2, 3, 1, 1);
-
+        H3_4_pushButton->setGeometry(QRect(350, 300, 100, 100));
+        H3_4_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H4_1_pushButton = new QPushButton(GameFrame);
+        H4_1_pushButton->setObjectName("H4_1_pushButton");
+        H4_1_pushButton->setGeometry(QRect(50, 400, 100, 100));
+        H4_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H4_2_pushButton = new QPushButton(GameFrame);
+        H4_2_pushButton->setObjectName("H4_2_pushButton");
+        H4_2_pushButton->setGeometry(QRect(150, 400, 100, 100));
+        H4_2_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H4_3_pushButton = new QPushButton(GameFrame);
+        H4_3_pushButton->setObjectName("H4_3_pushButton");
+        H4_3_pushButton->setGeometry(QRect(250, 400, 100, 100));
+        H4_3_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        H4_4_pushButton = new QPushButton(GameFrame);
+        H4_4_pushButton->setObjectName("H4_4_pushButton");
+        H4_4_pushButton->setGeometry(QRect(350, 400, 100, 100));
+        H4_4_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
 
         retranslateUi(GameFrame);
 
@@ -157,22 +124,24 @@ public:
     void retranslateUi(QFrame *GameFrame)
     {
         GameFrame->setWindowTitle(QCoreApplication::translate("GameFrame", "Frame", nullptr));
-        H3_1_pushButton->setText(QString());
-        H4_3_pushButton->setText(QString());
-        H4_4_pushButton->setText(QString());
-        H4_2_pushButton->setText(QString());
-        H2_1_pushButton->setText(QString());
-        H4_1_pushButton->setText(QString());
+        Name_label->setText(QCoreApplication::translate("GameFrame", "Name", nullptr));
+        coins_label->setText(QCoreApplication::translate("GameFrame", "coin", nullptr));
         H1_1_pushButton->setText(QString());
         H1_2_pushButton->setText(QString());
-        H2_2_pushButton->setText(QString());
-        H3_2_pushButton->setText(QString());
-        H3_3_pushButton->setText(QString());
-        H2_3_pushButton->setText(QString());
         H1_3_pushButton->setText(QString());
         H1_4_pushButton->setText(QString());
+        H2_1_pushButton->setText(QString());
+        H2_2_pushButton->setText(QString());
+        H2_3_pushButton->setText(QString());
         H2_4_pushButton->setText(QString());
+        H3_1_pushButton->setText(QString());
+        H3_2_pushButton->setText(QString());
+        H3_3_pushButton->setText(QString());
         H3_4_pushButton->setText(QString());
+        H4_1_pushButton->setText(QString());
+        H4_2_pushButton->setText(QString());
+        H4_3_pushButton->setText(QString());
+        H4_4_pushButton->setText(QString());
     } // retranslateUi
 
 };

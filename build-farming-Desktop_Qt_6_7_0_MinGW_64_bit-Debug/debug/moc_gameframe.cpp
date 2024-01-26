@@ -34,8 +34,10 @@ namespace {
 struct qt_meta_stringdata_CLASSGameFrameENDCLASS_t {};
 constexpr auto qt_meta_stringdata_CLASSGameFrameENDCLASS = QtMocHelpers::stringData(
     "GameFrame",
-    "on_H1_1_pushButton_clicked",
-    ""
+    "changePushButtonColor",
+    "",
+    "index",
+    "on_H1_1_pushButton_clicked"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -48,7 +50,7 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameFrameENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-       1,   14, // methods
+       2,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -56,9 +58,11 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSGameFrameENDCLASS[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,   20,    2, 0x08,    1 /* Private */,
+       1,    1,   26,    2, 0x0a,    1 /* Public */,
+       4,    0,   29,    2, 0x08,    3 /* Private */,
 
  // slots: parameters
+    QMetaType::Void, QMetaType::Int,    3,
     QMetaType::Void,
 
        0        // eod
@@ -73,6 +77,9 @@ Q_CONSTINIT const QMetaObject GameFrame::staticMetaObject = { {
     qt_incomplete_metaTypeArray<qt_meta_stringdata_CLASSGameFrameENDCLASS_t,
         // Q_OBJECT / Q_GADGET
         QtPrivate::TypeAndForceComplete<GameFrame, std::true_type>,
+        // method 'changePushButtonColor'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        QtPrivate::TypeAndForceComplete<int, std::false_type>,
         // method 'on_H1_1_pushButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
@@ -85,11 +92,11 @@ void GameFrame::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         auto *_t = static_cast<GameFrame *>(_o);
         (void)_t;
         switch (_id) {
-        case 0: _t->on_H1_1_pushButton_clicked(); break;
+        case 0: _t->changePushButtonColor((*reinterpret_cast< std::add_pointer_t<int>>(_a[1]))); break;
+        case 1: _t->on_H1_1_pushButton_clicked(); break;
         default: ;
         }
     }
-    (void)_a;
 }
 
 const QMetaObject *GameFrame::metaObject() const
@@ -111,13 +118,13 @@ int GameFrame::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 1)
+        if (_id < 2)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 1;
+        _id -= 2;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 1)
+        if (_id < 2)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 1;
+        _id -= 2;
     }
     return _id;
 }

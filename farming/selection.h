@@ -15,6 +15,13 @@ public:
     explicit Selection(QWidget *parent = nullptr);
     ~Selection();
 
+
+private slots:
+    void on_cow_pushButton_clicked();
+
+signals:
+    void cow_pushButtonClicked(int index);
+
 private:
     Ui::Selection *ui;
 };

@@ -1,28 +1,119 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
+#include <QApplication>
 
 
 #pragma once
-//#include "user.h"
-//#include "silo.h"
-//#include "warehouse.h"
-//#include <iostream>
-//using namespace std;
-
-class animal
-{
-protected:
-    int capasity;
-    int condition; // 1:hungry     2:grazing     3:ready    4:lock
-    int Time;
+class Animal {
 public:
-    void feed();
-    void collect();
-    void transfer(bool _decOrInc, int _number);
-    int getCapasity();
-    int getCondition();
-    void check();
+    virtual void sound() = 0;
+    virtual int getCost() = 0;
+    virtual int getEarnings() = 0;
+    virtual void produce() = 0;
+    virtual bool isReadyToCollect() = 0;
+    virtual void update() = 0;
+    Animal() {
+        qDebug() << "Animal constructed!";
+    }
+    virtual ~Animal() {
+        qDebug() << "Animal destructed!";
+    }
+protected:
+    int productionTime = 20; // seconds
+    int timeToProduction = productionTime;
+};
 
+class Cow : public Animal {
+public:
+    void sound() override {
+        qDebug() << "Moo!";
+    }
+    int getCost() override {
+        return 1000;
+    }
+    int getEarnings() override {
+        return 500;
+    }
+    void produce() override {
+        qDebug() << "Milk produced!";
+        timeToProduction = productionTime;
+    }
+    bool isReadyToCollect() override {
+        return timeToProduction == 0;
+    }
+    void update() override {
+        if (timeToProduction > 0) {
+            timeToProduction--;
+        }
+    }
+    Cow() {
+        qDebug() << "Cow constructed!";
+    }
+    ~Cow() {
+        qDebug() << "Cow destructed!";
+    }
+};
+
+class Lomb : public Animal {
+public:
+    void sound() override {
+        qDebug() << "Baa!";
+    }
+    int getCost() override {
+        return 800;
+    }
+    int getEarnings() override {
+        return 400;
+    }
+    void produce() override {
+        qDebug() << "Wool produced!";
+        timeToProduction = productionTime;
+    }
+    bool isReadyToCollect() override {
+        return timeToProduction == 0;
+    }
+    void update() override {
+        if (timeToProduction > 0) {
+            timeToProduction--;
+        }
+    }
+    Lomb() {
+        qDebug() << "Lomb constructed!";
+    }
+    ~Lomb() {
+        qDebug() << "Lomb destructed!";
+    }
+};
+
+class Chicken : public Animal {
+public:
+    void sound() override {
+        qDebug() << "Cluck!";
+    }
+    int getCost() override {
+        return 200;
+    }
+    int getEarnings() override {
+        return 100;
+    }
+    void produce() override {
+        qDebug() << "Egg produced!";
+        timeToProduction = productionTime;
+    }
+    bool isReadyToCollect() override {
+        return timeToProduction == 0;
+    }
+    void update() override {
+        if (timeToProduction > 0) {
+            timeToProduction--;
+        }
+    }
+    Chicken() {
+        qDebug() << "Chicken constructed!";
+    }
+    ~Chicken() {
+        qDebug() << "Chicken destructed!";
+    }
 };
 
 

@@ -1,10 +1,12 @@
 <RCC>
     <qresource prefix="/new/prefix1">
+        <file>images12/coin.png</file>
         <file>images12/corn.png</file>
         <file>images12/cow_f.png</file>
         <file>images12/hen_f2.png</file>
         <file>images12/sheep_f.png</file>
-        <file>images12/wheat.jpg</file>
+        <file>images12/wheat.png</file>
+        <file>images12/worker.png</file>
     </qresource>
     <qresource prefix="/new/prefix2"/>
 </RCC>

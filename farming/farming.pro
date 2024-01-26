@@ -10,6 +10,7 @@ CONFIG += c++17
 
 SOURCES += \
     gameframe.cpp \
+    handle.cpp \
     main.cpp \
     selection.cpp \
     signup.cpp
@@ -17,11 +18,13 @@ SOURCES += \
 HEADERS += \
     Animal.h \
     gameframe.h \
+    handle.h \
     selection.h \
     signup.h
 
 FORMS += \
     gameframe.ui \
+    handle.ui \
     selection.ui \
     signup.ui
 
