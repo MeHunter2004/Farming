@@ -101,7 +101,7 @@ void signup::on_AddPlayer_pushButton_clicked()
             if(isEmailValid(ui->Email_lineEdit->text())){
                 QString userInput = ui->captcha_lineEdit->text();
                 if (customCompare(userInput, captcha)) {
-                     QSqlQuery query;
+                    QSqlQuery query;
                     QString s1, s2, s3, s4;
                     //int salary = 10;
                     s1 = ui->UserName_lineEdit->text();
@@ -110,6 +110,8 @@ void signup::on_AddPlayer_pushButton_clicked()
                     s3 = ui->Phone_lineEdit->text();
 
                     query.exec("INSERT INTO Player(Username, Password, PhoneNumber, Email) VALUES('"+s1+"', '"+s2+"', '"+s3+"', '"+s4+"')");
+                    query.prepare("INSERT INTO Player (Salary) VALUES (:value)");
+                    query.bindValue(":value", 42); // Replace 42 with your actual integer value
                     // query.bindValue(":s1", s1);
                     // query.bindValue(":s2", s2);
                     // query.bindValue(":s3", s3);

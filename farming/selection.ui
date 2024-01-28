@@ -86,7 +86,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>price : 7</string>
+     <string>7</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -115,7 +118,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>price : 5</string>
+     <string>5</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">
@@ -128,7 +134,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>price : 3</string>
+     <string>3</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -218,7 +227,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>price : 2</string>
+     <string>2</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_6">
@@ -231,7 +243,10 @@
      </rect>
     </property>
     <property name="text">
-     <string>price : 2</string>
+     <string>2</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
     </property>
    </widget>
    <widget class="QLabel" name="label_9">

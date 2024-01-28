@@ -14,4 +14,5 @@ int main(int argc, char *argv[])
     //     QObject::connect(&Selection, &Page2::pushButtonClicked, &page1, &Page1::changePushButtonColor);
     // }
 
+
 }

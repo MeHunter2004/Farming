@@ -13,6 +13,7 @@
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QPushButton>
 
 QT_BEGIN_NAMESPACE
@@ -21,8 +22,7 @@ class Ui_GameFrame
 {
 public:
     QLabel *Name_label;
-    QLabel *coins_label;
-    QPushButton *H1_1_pushButton;
+    QLabel *coin_picture;
     QPushButton *H1_2_pushButton;
     QPushButton *H1_3_pushButton;
     QPushButton *H1_4_pushButton;
@@ -38,22 +38,32 @@ public:
     QPushButton *H4_2_pushButton;
     QPushButton *H4_3_pushButton;
     QPushButton *H4_4_pushButton;
+    QLineEdit *Name_lineEdit;
+    QPushButton *Load_pushButton;
+    QLabel *coins_label;
+    QPushButton *H1_1_pushButton;
 
     void setupUi(QFrame *GameFrame)
     {
         if (GameFrame->objectName().isEmpty())
             GameFrame->setObjectName("GameFrame");
-        GameFrame->resize(600, 500);
+        GameFrame->resize(500, 550);
         Name_label = new QLabel(GameFrame);
         Name_label->setObjectName("Name_label");
-        Name_label->setGeometry(QRect(130, 10, 37, 12));
-        coins_label = new QLabel(GameFrame);
-        coins_label->setObjectName("coins_label");
-        coins_label->setGeometry(QRect(130, 40, 37, 12));
-        H1_1_pushButton = new QPushButton(GameFrame);
-        H1_1_pushButton->setObjectName("H1_1_pushButton");
-        H1_1_pushButton->setGeometry(QRect(50, 100, 100, 100));
-        H1_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        Name_label->setGeometry(QRect(10, 10, 60, 20));
+        QFont font;
+        font.setFamilies({QString::fromUtf8("B Titr")});
+        font.setPointSize(14);
+        font.setBold(true);
+        Name_label->setFont(font);
+        coin_picture = new QLabel(GameFrame);
+        coin_picture->setObjectName("coin_picture");
+        coin_picture->setGeometry(QRect(470, 10, 20, 20));
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("B Zar")});
+        font1.setPointSize(12);
+        coin_picture->setFont(font1);
+        coin_picture->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images12/coin.png);"));
         H1_2_pushButton = new QPushButton(GameFrame);
         H1_2_pushButton->setObjectName("H1_2_pushButton");
         H1_2_pushButton->setGeometry(QRect(150, 100, 100, 100));
@@ -115,6 +125,21 @@ public:
         H4_4_pushButton->setObjectName("H4_4_pushButton");
         H4_4_pushButton->setGeometry(QRect(350, 400, 100, 100));
         H4_4_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        Name_lineEdit = new QLineEdit(GameFrame);
+        Name_lineEdit->setObjectName("Name_lineEdit");
+        Name_lineEdit->setGeometry(QRect(70, 10, 120, 20));
+        Load_pushButton = new QPushButton(GameFrame);
+        Load_pushButton->setObjectName("Load_pushButton");
+        Load_pushButton->setGeometry(QRect(30, 30, 80, 18));
+        coins_label = new QLabel(GameFrame);
+        coins_label->setObjectName("coins_label");
+        coins_label->setGeometry(QRect(430, 10, 40, 20));
+        coins_label->setFont(font);
+        coins_label->setAlignment(Qt::AlignCenter);
+        H1_1_pushButton = new QPushButton(GameFrame);
+        H1_1_pushButton->setObjectName("H1_1_pushButton");
+        H1_1_pushButton->setGeometry(QRect(50, 100, 100, 100));
+        H1_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
 
         retranslateUi(GameFrame);
 
@@ -124,9 +149,8 @@ public:
     void retranslateUi(QFrame *GameFrame)
     {
         GameFrame->setWindowTitle(QCoreApplication::translate("GameFrame", "Frame", nullptr));
-        Name_label->setText(QCoreApplication::translate("GameFrame", "Name", nullptr));
-        coins_label->setText(QCoreApplication::translate("GameFrame", "coin", nullptr));
-        H1_1_pushButton->setText(QString());
+        Name_label->setText(QCoreApplication::translate("GameFrame", "Name :", nullptr));
+        coin_picture->setText(QString());
         H1_2_pushButton->setText(QString());
         H1_3_pushButton->setText(QString());
         H1_4_pushButton->setText(QString());
@@ -142,6 +166,9 @@ public:
         H4_2_pushButton->setText(QString());
         H4_3_pushButton->setText(QString());
         H4_4_pushButton->setText(QString());
+        Load_pushButton->setText(QCoreApplication::translate("GameFrame", "load", nullptr));
+        coins_label->setText(QCoreApplication::translate("GameFrame", "0", nullptr));
+        H1_1_pushButton->setText(QString());
     } // retranslateUi
 
 };

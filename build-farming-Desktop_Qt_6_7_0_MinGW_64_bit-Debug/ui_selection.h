@@ -63,6 +63,7 @@ public:
         label = new QLabel(animal_groupBox);
         label->setObjectName("label");
         label->setGeometry(QRect(10, 75, 40, 20));
+        label->setAlignment(Qt::AlignCenter);
         label_2 = new QLabel(animal_groupBox);
         label_2->setObjectName("label_2");
         label_2->setGeometry(QRect(50, 75, 20, 20));
@@ -70,9 +71,11 @@ public:
         label_3 = new QLabel(animal_groupBox);
         label_3->setObjectName("label_3");
         label_3->setGeometry(QRect(100, 75, 40, 20));
+        label_3->setAlignment(Qt::AlignCenter);
         label_4 = new QLabel(animal_groupBox);
         label_4->setObjectName("label_4");
         label_4->setGeometry(QRect(10, 165, 40, 20));
+        label_4->setAlignment(Qt::AlignCenter);
         label_7 = new QLabel(animal_groupBox);
         label_7->setObjectName("label_7");
         label_7->setGeometry(QRect(50, 165, 20, 20));
@@ -95,9 +98,11 @@ public:
         label_5 = new QLabel(seeds_groupBox);
         label_5->setObjectName("label_5");
         label_5->setGeometry(QRect(100, 75, 40, 20));
+        label_5->setAlignment(Qt::AlignCenter);
         label_6 = new QLabel(seeds_groupBox);
         label_6->setObjectName("label_6");
         label_6->setGeometry(QRect(10, 75, 40, 20));
+        label_6->setAlignment(Qt::AlignCenter);
         label_9 = new QLabel(seeds_groupBox);
         label_9->setObjectName("label_9");
         label_9->setGeometry(QRect(140, 75, 20, 20));
@@ -119,17 +124,17 @@ public:
         cow_pushButton->setText(QString());
         lomb_pushButton->setText(QString());
         chicken_pushButton->setText(QString());
-        label->setText(QCoreApplication::translate("Selection", "price : 7", nullptr));
+        label->setText(QCoreApplication::translate("Selection", "7", nullptr));
         label_2->setText(QString());
-        label_3->setText(QCoreApplication::translate("Selection", "price : 5", nullptr));
-        label_4->setText(QCoreApplication::translate("Selection", "price : 3", nullptr));
+        label_3->setText(QCoreApplication::translate("Selection", "5", nullptr));
+        label_4->setText(QCoreApplication::translate("Selection", "3", nullptr));
         label_7->setText(QString());
         label_8->setText(QString());
         seeds_groupBox->setTitle(QCoreApplication::translate("Selection", "seeds", nullptr));
         wheat_pushButton->setText(QString());
         corn_pushButton->setText(QString());
-        label_5->setText(QCoreApplication::translate("Selection", "price : 2", nullptr));
-        label_6->setText(QCoreApplication::translate("Selection", "price : 2", nullptr));
+        label_5->setText(QCoreApplication::translate("Selection", "2", nullptr));
+        label_6->setText(QCoreApplication::translate("Selection", "2", nullptr));
         label_9->setText(QString());
         label_10->setText(QString());
     } // retranslateUi

@@ -2,18 +2,28 @@
 #include "ui_gameframe.h"
 #include "selection.h"
 #include "handle.h"
+#include <QSqlDatabase>
+#include "QSqlDriver"
+#include "QSqlQuery"
+#include "QSqlQueryModel"
 
 GameFrame::GameFrame(QWidget *parent)
     : QFrame(parent)
     , ui(new Ui::GameFrame)
 {
     ui->setupUi(this);
+    QSqlDatabase database;
+    database = QSqlDatabase::addDatabase("QSQLITE");
+    database.setDatabaseName("e:/programming/FinalProject_QT/database/players.db");
+    database.open();
 }
 
 GameFrame::~GameFrame()
 {
     delete ui;
 }
+
+
 
 void GameFrame::on_H1_1_pushButton_clicked()
 {
@@ -26,6 +36,14 @@ void GameFrame::on_H1_1_pushButton_clicked()
     }else if (ui->H1_1_pushButton->styleSheet() == "image: url(:/new/prefix1/images12/cow_f.png);"){
         handle *hc = new handle;
         hc->show();
+    }else if (ui->H1_1_pushButton->styleSheet() == "image: url(:/new/prefix1/images12/sheep_f.png);") {
+
+    }else if (ui->H1_1_pushButton->styleSheet() == "image: url(:/new/prefix1/images12/hen_f2.png);") {
+
+    }else if (ui->H1_1_pushButton->styleSheet() == "image: url(:/new/prefix1/images12/wheat.png);") {
+
+    }else if (ui->H1_1_pushButton->styleSheet() == "image: url(:/new/prefix1/images12/corn.png);") {
+
     }
 
 
@@ -36,5 +54,12 @@ void GameFrame::changePushButtonColor(int index)
 {
     QPushButton* button = buttons[index];
     button->setStyleSheet("background-color: red");
+}
+
+
+void GameFrame::on_Load_pushButton_clicked()
+{
+    ui->Name_lineEdit->text();
+
 }
 

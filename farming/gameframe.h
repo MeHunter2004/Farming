@@ -22,6 +22,8 @@ public slots:
 private slots:
     void on_H1_1_pushButton_clicked();
 
+    void on_Load_pushButton_clicked();
+
 private:
     Ui::GameFrame *ui;
    QList<QPushButton*> buttons;

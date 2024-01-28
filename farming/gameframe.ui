@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>500</height>
+    <width>500</width>
+    <height>550</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,40 +16,40 @@
   <widget class="QLabel" name="Name_label">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>10</x>
      <y>10</y>
-     <width>37</width>
-     <height>12</height>
+     <width>60</width>
+     <height>20</height>
     </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>B Titr</family>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
    </property>
    <property name="text">
-    <string>Name</string>
+    <string>Name :</string>
    </property>
   </widget>
-  <widget class="QLabel" name="coins_label">
+  <widget class="QLabel" name="coin_picture">
    <property name="geometry">
     <rect>
-     <x>130</x>
-     <y>40</y>
-     <width>37</width>
-     <height>12</height>
+     <x>470</x>
+     <y>10</y>
+     <width>20</width>
+     <height>20</height>
     </rect>
    </property>
-   <property name="text">
-    <string>coin</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="H1_1_pushButton">
-   <property name="geometry">
-    <rect>
-     <x>50</x>
-     <y>100</y>
-     <width>100</width>
-     <height>100</height>
-    </rect>
+   <property name="font">
+    <font>
+     <family>B Zar</family>
+     <pointsize>12</pointsize>
+    </font>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(81, 41, 0);</string>
+    <string notr="true">image: url(:/new/prefix1/images12/coin.png);</string>
    </property>
    <property name="text">
     <string/>
@@ -285,6 +285,68 @@ background-color: rgb(81, 41, 0);</string>
     <rect>
      <x>350</x>
      <y>400</y>
+     <width>100</width>
+     <height>100</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(81, 41, 0);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="Name_lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>10</y>
+     <width>120</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Load_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>30</y>
+     <width>80</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>load</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="coins_label">
+   <property name="geometry">
+    <rect>
+     <x>430</x>
+     <y>10</y>
+     <width>40</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>B Titr</family>
+     <pointsize>14</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="H1_1_pushButton">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>100</y>
      <width>100</width>
      <height>100</height>
     </rect>

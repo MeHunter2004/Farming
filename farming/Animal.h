@@ -1,9 +1,17 @@
 #ifndef ANIMAL_H
 #define ANIMAL_H
 #include <QApplication>
-
+#include <QtMultimedia/QMediaPlayer>
+#include <QtMultimedia/QAudioOutput>
 
 #pragma once
+
+int beefCount = 0, meetCount = 0, chickenCount = 0, wool = 0, milk = 0, egg = 0, wheatCount = 0, cornCount = 0;
+
+//QMediaPlayer* player = new QMediaPlayer;
+//QAudioOutput* audioOutput = new QAudioOutput;
+
+//////////////////////////////Animals//////////////////////////////
 class Animal {
 public:
     virtual void sound() = 0;
@@ -26,13 +34,15 @@ protected:
 class Cow : public Animal {
 public:
     void sound() override {
-        qDebug() << "Moo!";
+        // player->setSource(QUrl::fromLocalFile(""));
+        // player->setAudioOutput(audioOutput); // Set the volume (0-100)
+        // player->play(); // Start playing the sound
     }
     int getCost() override {
-        return 1000;
+        return 7;
     }
     int getEarnings() override {
-        return 500;
+        return 5;
     }
     void produce() override {
         qDebug() << "Milk produced!";
@@ -51,6 +61,7 @@ public:
     }
     ~Cow() {
         qDebug() << "Cow destructed!";
+        beefCount++;
     }
 };
 
@@ -60,10 +71,10 @@ public:
         qDebug() << "Baa!";
     }
     int getCost() override {
-        return 800;
+        return 5;
     }
     int getEarnings() override {
-        return 400;
+        return 3;
     }
     void produce() override {
         qDebug() << "Wool produced!";
@@ -82,6 +93,7 @@ public:
     }
     ~Lomb() {
         qDebug() << "Lomb destructed!";
+        meetCount++;
     }
 };
 
@@ -91,10 +103,10 @@ public:
         qDebug() << "Cluck!";
     }
     int getCost() override {
-        return 200;
+        return 3;
     }
     int getEarnings() override {
-        return 100;
+        return 3;
     }
     void produce() override {
         qDebug() << "Egg produced!";
@@ -113,9 +125,84 @@ public:
     }
     ~Chicken() {
         qDebug() << "Chicken destructed!";
+        chickenCount++;
+    }
+};
+//////////////////////////////Seeds//////////////////////////////
+class Seed {
+public:
+    virtual int getCost() = 0;
+    virtual int getEarnings() = 0;
+    virtual void produce() = 0;
+    virtual bool isReadyToCollect() = 0;
+    virtual void update() = 0;
+    Seed() {
+        qDebug() << "Seed constructed!";
+    }
+    ~Seed() {
+        qDebug() << "Seed destructed!";
+    }
+protected:
+    int productionTime = 20; // seconds
+    int timeToProduction = productionTime;
+};
+
+class Wheat : public Seed {
+public:
+    int getCost() override {
+        return 3;
+    }
+    int getEarnings() override {
+        return 3;
+    }
+    void produce() override {
+        qDebug() << "Wheat produced!";
+        timeToProduction = productionTime;
+    }
+    bool isReadyToCollect() override {
+        return timeToProduction == 0;
+    }
+    void update() override {
+        if (timeToProduction > 0) {
+            timeToProduction--;
+        }
+    }
+    Wheat() {
+        qDebug() << "Seed constructed!";
+    }
+    ~Wheat() {
+        qDebug() << "Seed destructed!";
+        wheatCount++;
     }
 };
 
-
+class Corn : public Seed {
+public:
+    int getCost() override {
+        return 3;
+    }
+    int getEarnings() override {
+        return 3;
+    }
+    void produce() override {
+        qDebug() << "Corn produced!";
+        timeToProduction = productionTime;
+    }
+    bool isReadyToCollect() override {
+        return timeToProduction == 0;
+    }
+    void update() override {
+        if (timeToProduction > 0) {
+            timeToProduction--;
+        }
+    }
+    Corn() {
+        qDebug() << "Corn constructed!";
+    }
+    ~Corn() {
+        qDebug() << "Corn destructed!";
+        cornCount++;
+    }
+};
 
 #endif // ANIMAL_H

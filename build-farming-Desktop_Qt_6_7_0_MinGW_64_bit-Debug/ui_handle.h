@@ -30,7 +30,7 @@ public:
     {
         if (handle->objectName().isEmpty())
             handle->setObjectName("handle");
-        handle->resize(300, 300);
+        handle->resize(299, 286);
         collect_pushButton = new QPushButton(handle);
         collect_pushButton->setObjectName("collect_pushButton");
         collect_pushButton->setGeometry(QRect(40, 210, 80, 18));
