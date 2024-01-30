@@ -119,6 +119,8 @@ void signup::on_AddPlayer_pushButton_clicked()
                     // query.bindValue(":salary", salary);
                     // query.exec();
                     //query.exec("INSERT INTO Player(Username,Password,PhoneNumber,Email,Salary");
+                    QMessageBox::information(this, tr("Successful"), tr("The informations added successfully."));
+
 
                 } else {
                     QMessageBox::warning(this,"Captcha","Pleas enter correct captcha.");

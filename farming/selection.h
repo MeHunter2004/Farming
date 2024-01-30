@@ -21,6 +21,12 @@ private slots:
 
     void on_lomb_pushButton_clicked();
 
+    void on_hen_pushButton_clicked();
+
+    void on_wheat_pushButton_clicked();
+
+    void on_corn_pushButton_clicked();
+
 signals:
     void cow_pushButtonClicked(int index);
 

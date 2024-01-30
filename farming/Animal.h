@@ -185,10 +185,12 @@ public:
     }
     Wheat() {
         qDebug() << "Seed constructed!";
+        wheatCount++;
+
     }
     ~Wheat() {
         qDebug() << "Seed destructed!";
-        wheatCount++;
+        cornCount--;
     }
 };
 
@@ -214,10 +216,12 @@ public:
     }
     Corn() {
         qDebug() << "Corn constructed!";
+        cornCount++;
+
     }
     ~Corn() {
         qDebug() << "Corn destructed!";
-        cornCount++;
+        cornCount--;
     }
 };
 
