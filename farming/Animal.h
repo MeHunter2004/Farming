@@ -8,6 +8,7 @@
 
 extern int beefCount, meetCount, chickenCount, wool, milk, egg, wheatCount, cornCount;
 extern int cowCount, lombCount, henCount, workerCount;
+extern int coins;
 //QMediaPlayer* player = new QMediaPlayer;
 //QAudioOutput* audioOutput = new QAudioOutput;
 

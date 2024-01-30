@@ -15,6 +15,9 @@ public:
     explicit handle(QWidget *parent = nullptr);
     ~handle();
 
+private slots:
+    void on_worker_pushButton_clicked();
+
 private:
     Ui::handle *ui;
 };

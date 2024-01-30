@@ -56,6 +56,7 @@ private slots:
 
     void on_H4_4_pushButton_clicked();
 
+
 private:
     Ui::GameFrame *ui;
    QList<QPushButton*> buttons;

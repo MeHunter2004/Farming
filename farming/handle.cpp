@@ -14,3 +14,9 @@ handle::~handle()
 {
     delete ui;
 }
+
+void handle::on_worker_pushButton_clicked()
+{
+    workerCount--;
+}
+

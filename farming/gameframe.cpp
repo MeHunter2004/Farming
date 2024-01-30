@@ -7,6 +7,8 @@
 #include "QSqlQuery"
 #include "QSqlQueryModel"
 #include "shop.h"
+#include "Animal.h"
+#include "QMessageBox"
 
 GameFrame::GameFrame(QWidget *parent)
     : QFrame(parent)
@@ -30,7 +32,13 @@ void GameFrame::on_H1_1_pushButton_clicked()
 {
     if (ui->H1_1_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H1_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H1_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H1_1_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -66,7 +74,18 @@ void GameFrame::changePushButtonColor(int index)
 
 void GameFrame::on_Load_pushButton_clicked()
 {
-    ui->Name_lineEdit->text();
+    QString s = ui->Name_lineEdit->text();
+    // Assuming db is a QSqlDatabase object that contains the database connection
+    QSqlQuery query; // create a QSqlQuery object with the database connection
+    query.exec("SELECT Salery FROM Player WHERE Username = '"+s+"'"); // execute a SQL query with the desired username
+    if (query.next()) { // move to the first record in the result set
+        int salary = query.value(0).toInt(); // get the Salary field as an int
+        // alternatively, use double salary = query.value(0).toDouble(); if the Salary field is a double
+        ui->coins_label->setNum(salary); // set the label text to the salary value
+        // do something with the label, such as adding it to a layout or a widget
+    }
+    coins = ui->coins_label->text().toInt();
+
 
 }
 
@@ -83,7 +102,13 @@ void GameFrame::on_H1_2_pushButton_clicked()
 {
     if (ui->H1_2_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H1_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H1_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H1_2_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -121,7 +146,13 @@ void GameFrame::on_H1_3_pushButton_clicked()
 {
     if (ui->H1_3_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H1_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H1_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H1_3_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -151,7 +182,13 @@ void GameFrame::on_H1_4_pushButton_clicked()
 {
     if (ui->H1_4_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H1_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H1_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H1_4_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -181,7 +218,13 @@ void GameFrame::on_H2_1_pushButton_clicked()
 {
     if (ui->H2_1_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H2_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H2_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H2_1_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -211,7 +254,13 @@ void GameFrame::on_H2_2_pushButton_clicked()
 {
     if (ui->H2_2_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H2_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H2_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H2_2_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -241,7 +290,13 @@ void GameFrame::on_H2_3_pushButton_clicked()
 {
     if (ui->H2_3_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H2_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H2_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H2_3_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -271,7 +326,13 @@ void GameFrame::on_H2_4_pushButton_clicked()
 {
     if (ui->H2_4_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H2_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H2_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H2_4_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -293,7 +354,6 @@ void GameFrame::on_H2_4_pushButton_clicked()
     }else if (ui->H2_4_pushButton->styleSheet() == "image: url(:/new/prefix1/images12/corn.png);") {
 
     }
-
 }
 
 
@@ -301,7 +361,13 @@ void GameFrame::on_H3_1_pushButton_clicked()
 {
     if (ui->H3_1_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H3_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H3_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H3_1_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -331,7 +397,13 @@ void GameFrame::on_H3_2_pushButton_clicked()
 {
     if (ui->H3_2_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H3_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H3_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H3_2_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -361,7 +433,13 @@ void GameFrame::on_H3_3_pushButton_clicked()
 {
     if (ui->H3_3_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H3_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H3_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H3_3_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -391,7 +469,13 @@ void GameFrame::on_H3_4_pushButton_clicked()
 {
     if (ui->H3_4_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H3_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H3_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H3_4_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -421,7 +505,13 @@ void GameFrame::on_H4_1_pushButton_clicked()
 {
     if (ui->H4_1_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H4_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H4_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H4_1_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -451,7 +541,13 @@ void GameFrame::on_H4_2_pushButton_clicked()
 {
     if (ui->H4_2_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H4_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H4_2_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H4_2_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -481,7 +577,13 @@ void GameFrame::on_H4_3_pushButton_clicked()
 {
     if (ui->H4_3_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H4_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H4_3_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H4_3_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -511,7 +613,13 @@ void GameFrame::on_H4_4_pushButton_clicked()
 {
     if (ui->H4_4_pushButton->styleSheet() == "background-color: rgb(81, 41, 0);"){
 
-        ui->H4_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+        if (coins >= 3) {
+            ui->H4_4_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
+            coins -= 3;
+            ui->coins_label->setNum(coins);
+        } else {
+            QMessageBox::warning(this,"","You don't have enugh coins!");
+        }
 
     }
     else if (ui->H4_4_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
@@ -535,4 +643,7 @@ void GameFrame::on_H4_4_pushButton_clicked()
     }
 
 }
+
+
+
 
