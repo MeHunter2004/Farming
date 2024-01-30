@@ -6,8 +6,8 @@
 
 #pragma once
 
-int beefCount = 0, meetCount = 0, chickenCount = 0, wool = 0, milk = 0, egg = 0, wheatCount = 0, cornCount = 0;
-
+extern int beefCount, meetCount, chickenCount, wool, milk, egg, wheatCount, cornCount;
+extern int cowCount, lombCount, henCount, workerCount;
 //QMediaPlayer* player = new QMediaPlayer;
 //QAudioOutput* audioOutput = new QAudioOutput;
 
@@ -15,6 +15,7 @@ int beefCount = 0, meetCount = 0, chickenCount = 0, wool = 0, milk = 0, egg = 0,
 class Animal {
 public:
     virtual void sound() = 0;
+    virtual void collect() = 0;
     virtual int getCost() = 0;
     virtual int getEarnings() = 0;
     virtual void produce() = 0;
@@ -51,6 +52,9 @@ public:
     bool isReadyToCollect() override {
         return timeToProduction == 0;
     }
+    void collect() override {
+        milk++;
+    }
     void update() override {
         if (timeToProduction > 0) {
             timeToProduction--;
@@ -58,10 +62,12 @@ public:
     }
     Cow() {
         qDebug() << "Cow constructed!";
+        cowCount++;
     }
     ~Cow() {
         qDebug() << "Cow destructed!";
         beefCount++;
+        cowCount--;
     }
 };
 
@@ -83,6 +89,9 @@ public:
     bool isReadyToCollect() override {
         return timeToProduction == 0;
     }
+    void collect() override {
+        wool++;
+    }
     void update() override {
         if (timeToProduction > 0) {
             timeToProduction--;
@@ -90,10 +99,12 @@ public:
     }
     Lomb() {
         qDebug() << "Lomb constructed!";
+        lombCount++;
     }
     ~Lomb() {
         qDebug() << "Lomb destructed!";
         meetCount++;
+        lombCount--;
     }
 };
 
@@ -115,6 +126,9 @@ public:
     bool isReadyToCollect() override {
         return timeToProduction == 0;
     }
+    void collect() override {
+        egg++;
+    }
     void update() override {
         if (timeToProduction > 0) {
             timeToProduction--;
@@ -122,10 +136,12 @@ public:
     }
     Chicken() {
         qDebug() << "Chicken constructed!";
+        henCount++;
     }
     ~Chicken() {
         qDebug() << "Chicken destructed!";
         chickenCount++;
+        henCount--;
     }
 };
 //////////////////////////////Seeds//////////////////////////////

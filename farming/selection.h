@@ -19,6 +19,8 @@ public:
 private slots:
     void on_cow_pushButton_clicked();
 
+    void on_lomb_pushButton_clicked();
+
 signals:
     void cow_pushButtonClicked(int index);
 

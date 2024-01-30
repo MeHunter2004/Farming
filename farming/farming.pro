@@ -9,10 +9,12 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    Animal.cpp \
     gameframe.cpp \
     handle.cpp \
     main.cpp \
     selection.cpp \
+    shop.cpp \
     signup.cpp
 
 HEADERS += \
@@ -20,12 +22,14 @@ HEADERS += \
     gameframe.h \
     handle.h \
     selection.h \
+    shop.h \
     signup.h
 
 FORMS += \
     gameframe.ui \
     handle.ui \
     selection.ui \
+    shop.ui \
     signup.ui
 
 # Default rules for deployment.

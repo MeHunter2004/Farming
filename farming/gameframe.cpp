@@ -6,6 +6,7 @@
 #include "QSqlDriver"
 #include "QSqlQuery"
 #include "QSqlQueryModel"
+#include "shop.h"
 
 GameFrame::GameFrame(QWidget *parent)
     : QFrame(parent)
@@ -31,8 +32,8 @@ void GameFrame::on_H1_1_pushButton_clicked()
         ui->H1_1_pushButton->setStyleSheet("background-color: rgb(0, 85, 0);");
     }
     else if (ui->H1_1_pushButton->styleSheet() == "background-color: rgb(0, 85, 0);"){
-        Selection *s = new Selection;
-        s->show();
+        Selection *se = new Selection;
+        se->show();
     }else if (ui->H1_1_pushButton->styleSheet() == "image: url(:/new/prefix1/images12/cow_f.png);"){
         handle *hc = new handle;
         hc->show();
@@ -61,5 +62,13 @@ void GameFrame::on_Load_pushButton_clicked()
 {
     ui->Name_lineEdit->text();
 
+}
+
+
+
+void GameFrame::on_shop_pushButton_clicked()
+{
+    shop *sh = new shop;
+    sh->show();
 }
 

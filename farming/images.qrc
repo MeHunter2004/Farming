@@ -7,6 +7,9 @@
         <file>images12/sheep_f.png</file>
         <file>images12/wheat.png</file>
         <file>images12/worker.png</file>
+        <file>images12/ranch.png</file>
+        <file>images12/shop-icon.png</file>
+        <file>images12/village_Shop.png</file>
     </qresource>
     <qresource prefix="/new/prefix2"/>
 </RCC>

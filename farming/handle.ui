@@ -55,10 +55,10 @@
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="workers_number_label">
    <property name="geometry">
     <rect>
-     <x>130</x>
+     <x>140</x>
      <y>110</y>
      <width>21</width>
      <height>16</height>
@@ -70,26 +70,10 @@
     </font>
    </property>
    <property name="text">
-    <string>5</string>
+    <string>0</string>
    </property>
    <property name="alignment">
     <set>Qt::AlignCenter</set>
-   </property>
-  </widget>
-  <widget class="QLabel" name="label_2">
-   <property name="geometry">
-    <rect>
-     <x>150</x>
-     <y>110</y>
-     <width>21</width>
-     <height>16</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">image: url(:/new/prefix1/images12/coin.png);</string>
-   </property>
-   <property name="text">
-    <string/>
    </property>
   </widget>
  </widget>

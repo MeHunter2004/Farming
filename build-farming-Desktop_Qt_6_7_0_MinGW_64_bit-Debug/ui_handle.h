@@ -23,8 +23,7 @@ public:
     QPushButton *collect_pushButton;
     QPushButton *sell_pushButton;
     QPushButton *worker_pushButton;
-    QLabel *label;
-    QLabel *label_2;
+    QLabel *workers_number_label;
 
     void setupUi(QWidget *handle)
     {
@@ -41,17 +40,13 @@ public:
         worker_pushButton->setObjectName("worker_pushButton");
         worker_pushButton->setGeometry(QRect(120, 30, 60, 80));
         worker_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images12/worker.png);"));
-        label = new QLabel(handle);
-        label->setObjectName("label");
-        label->setGeometry(QRect(130, 110, 21, 16));
+        workers_number_label = new QLabel(handle);
+        workers_number_label->setObjectName("workers_number_label");
+        workers_number_label->setGeometry(QRect(140, 110, 21, 16));
         QFont font;
         font.setPointSize(11);
-        label->setFont(font);
-        label->setAlignment(Qt::AlignCenter);
-        label_2 = new QLabel(handle);
-        label_2->setObjectName("label_2");
-        label_2->setGeometry(QRect(150, 110, 21, 16));
-        label_2->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images12/coin.png);"));
+        workers_number_label->setFont(font);
+        workers_number_label->setAlignment(Qt::AlignCenter);
 
         retranslateUi(handle);
 
@@ -64,8 +59,7 @@ public:
         collect_pushButton->setText(QCoreApplication::translate("handle", "collect", nullptr));
         sell_pushButton->setText(QCoreApplication::translate("handle", "sell", nullptr));
         worker_pushButton->setText(QString());
-        label->setText(QCoreApplication::translate("handle", "5", nullptr));
-        label_2->setText(QString());
+        workers_number_label->setText(QCoreApplication::translate("handle", "0", nullptr));
     } // retranslateUi
 
 };

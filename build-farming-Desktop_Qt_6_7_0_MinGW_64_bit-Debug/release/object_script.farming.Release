@@ -1,10 +1,13 @@
+release/Animal.o
 release/gameframe.o
 release/handle.o
 release/main.o
 release/selection.o
+release/shop.o
 release/signup.o
 release/qrc_images.o
 release/moc_gameframe.o
 release/moc_handle.o
 release/moc_selection.o
+release/moc_shop.o
 release/moc_signup.o

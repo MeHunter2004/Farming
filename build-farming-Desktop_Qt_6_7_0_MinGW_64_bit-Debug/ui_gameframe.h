@@ -42,12 +42,14 @@ public:
     QPushButton *Load_pushButton;
     QLabel *coins_label;
     QPushButton *H1_1_pushButton;
+    QPushButton *shop_pushButton;
 
     void setupUi(QFrame *GameFrame)
     {
         if (GameFrame->objectName().isEmpty())
             GameFrame->setObjectName("GameFrame");
-        GameFrame->resize(500, 550);
+        GameFrame->resize(650, 550);
+        GameFrame->setStyleSheet(QString::fromUtf8(""));
         Name_label = new QLabel(GameFrame);
         Name_label->setObjectName("Name_label");
         Name_label->setGeometry(QRect(10, 10, 60, 20));
@@ -58,7 +60,7 @@ public:
         Name_label->setFont(font);
         coin_picture = new QLabel(GameFrame);
         coin_picture->setObjectName("coin_picture");
-        coin_picture->setGeometry(QRect(470, 10, 20, 20));
+        coin_picture->setGeometry(QRect(620, 10, 20, 20));
         QFont font1;
         font1.setFamilies({QString::fromUtf8("B Zar")});
         font1.setPointSize(12);
@@ -133,13 +135,17 @@ public:
         Load_pushButton->setGeometry(QRect(30, 30, 80, 18));
         coins_label = new QLabel(GameFrame);
         coins_label->setObjectName("coins_label");
-        coins_label->setGeometry(QRect(430, 10, 40, 20));
+        coins_label->setGeometry(QRect(580, 10, 40, 20));
         coins_label->setFont(font);
         coins_label->setAlignment(Qt::AlignCenter);
         H1_1_pushButton = new QPushButton(GameFrame);
         H1_1_pushButton->setObjectName("H1_1_pushButton");
         H1_1_pushButton->setGeometry(QRect(50, 100, 100, 100));
         H1_1_pushButton->setStyleSheet(QString::fromUtf8("background-color: rgb(81, 41, 0);"));
+        shop_pushButton = new QPushButton(GameFrame);
+        shop_pushButton->setObjectName("shop_pushButton");
+        shop_pushButton->setGeometry(QRect(510, 410, 80, 80));
+        shop_pushButton->setStyleSheet(QString::fromUtf8("image: url(:/new/prefix1/images12/shop-icon.png);"));
 
         retranslateUi(GameFrame);
 
@@ -169,6 +175,7 @@ public:
         Load_pushButton->setText(QCoreApplication::translate("GameFrame", "load", nullptr));
         coins_label->setText(QCoreApplication::translate("GameFrame", "0", nullptr));
         H1_1_pushButton->setText(QString());
+        shop_pushButton->setText(QString());
     } // retranslateUi
 
 };
